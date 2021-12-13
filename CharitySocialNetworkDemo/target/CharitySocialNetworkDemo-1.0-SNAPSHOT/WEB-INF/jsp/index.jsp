@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,6 +13,12 @@
         <title>Home Page</title>
     </head>
     <body>
-        <h1>Hello ${name}</h1>
+        <h1>Hello ${name}</h1>    
+        <h2>${fullName}</h2>
     </body>
+    <form:form method="post" action="/CharitySocialNetworkDemo/hello-post" modelAttribute="user">
+        <form:input path="firstName"/>
+        <form:input path="lastName"/>
+        <input type="submit" value="Send"/>
+    </form:form>
 </html>
