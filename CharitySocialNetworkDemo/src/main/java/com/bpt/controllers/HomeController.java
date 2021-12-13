@@ -22,12 +22,8 @@ import pojos.User;
 @Controller
 public class HomeController {
     @RequestMapping("/")
-<<<<<<< HEAD
-    public String index(Model model){
-        model.addAttribute("name","Phong");
-=======
     public String index(Model model, 
-           @RequestParam Map<String,String> params){
+        @RequestParam Map<String,String> params){
         String firstName = params.get("first_name");
         String lastName = params.get("last_name");
         if (firstName != null && lastName != null)
@@ -48,8 +44,6 @@ public class HomeController {
     @RequestMapping(path="/hello-post",method=RequestMethod.POST)
     public String helloPost(Model model,@ModelAttribute(value = "user") User user){
         model.addAttribute("fullName", user.getFirstName() + " " + user.getLastName());
-        
->>>>>>> 6c5d62d13831c2a008bf334b1b17c2b196e71bdf
         return "index";
     }
 }
