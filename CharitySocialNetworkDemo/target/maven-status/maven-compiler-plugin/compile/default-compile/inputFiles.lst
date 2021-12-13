@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 E:\?? án java\ChaSoNet\CharitySocialNetworkDemo\src\main\java\com\bpt\configs\DispatcherServiceInitializer.java
 E:\?? án java\ChaSoNet\CharitySocialNetworkDemo\src\main\java\com\bpt\configs\WebApplicationContextConfig.java
 E:\?? án java\ChaSoNet\CharitySocialNetworkDemo\src\main\java\com\bpt\controllers\HomeController.java
+=======
+E:\MyGithub\CharitySocialNetwork\CharitySocialNetworkDemo\src\main\java\com\bpt\configs\DispatcherServiceInitializer.java
+E:\MyGithub\CharitySocialNetwork\CharitySocialNetworkDemo\src\main\java\com\bpt\configs\WebApplicationContextConfig.java
+E:\MyGithub\CharitySocialNetwork\CharitySocialNetworkDemo\src\main\java\com\bpt\controllers\HomeController.java
+>>>>>>> 6c5d62d13831c2a008bf334b1b17c2b196e71bdf
