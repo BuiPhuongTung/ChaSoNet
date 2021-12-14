@@ -15,15 +15,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import pojos.User;
 
-/**
- *
- * @author ACER
- */
+
 @Controller
 public class HomeController {
     @RequestMapping("/")
     public String index(Model model, 
-        @RequestParam Map<String,String> params){
+            @RequestParam Map<String,String> params){
         String firstName = params.get("first_name");
         String lastName = params.get("last_name");
         if (firstName != null && lastName != null)
