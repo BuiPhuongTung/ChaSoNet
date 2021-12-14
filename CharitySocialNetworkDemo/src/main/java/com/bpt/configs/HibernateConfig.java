@@ -27,12 +27,12 @@ public class HibernateConfig {
     
     @Bean
     public LocalSessionFactoryBean getSessionFactory(){
-        LocalSessionFactoryBean factory = new LocalSessionFactoryBean();
-        factory.setPackagesToScan("com.bpt.pojos");
-        factory.setDataSource(dataSource());
-        factory.setHibernateProperties(HibernateProperties());
+        LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
+        sessionFactory.setPackagesToScan("com.bpt.pojos");
+        sessionFactory.setDataSource(dataSource());
+        sessionFactory.setHibernateProperties(HibernateProperties());
         
-        return factory;
+        return sessionFactory;
     }
     
     @Bean
