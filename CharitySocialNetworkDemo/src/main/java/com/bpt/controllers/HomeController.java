@@ -14,20 +14,33 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import com.bpt.pojos.User;
+import com.mysql.cj.Session;
+import javax.persistence.Query;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
+import org.springframework.transaction.annotation.Transactional;
 
 
 @Controller
 public class HomeController {
-    @RequestMapping("/")
-    public String index(Model model, 
-            @RequestParam Map<String,String> params){
-        String firstName = params.get("first_name");
-        String lastName = params.get("last_name");
-        if (firstName != null && lastName != null)
-            model.addAttribute("name", String.format("%s %s", firstName, lastName));
-        else 
-            model.addAttribute("name", "Tung");
-        model.addAttribute("user", new User());
+    @Autowired
+    private LocalSessionFactoryBean sessionFactory;
+    
+    @RequestMapping
+    @Transactional
+    public String index(Model model){ 
+//            @RequestParam Map<String,String> params){
+//        String firstName = params.get("first_name")   ;
+//        String lastName = params.get("last_name");
+//        if (firstName != null && lastName != null)
+//            model.addAttribute("name", String.format("%s %s", firstName, lastName));
+//        else 
+//            model.addAttribute("name", "Tung");
+//        model.addAttribute("user", new User());
+        org.hibernate.Session s = sessionFactory.getObject().getCurrentSession();
+        Query q = s.createNamedQuery("From User");
+        model.addAttribute("user", q.getResultList());
+//        s.close();
         return "index";
     }
     

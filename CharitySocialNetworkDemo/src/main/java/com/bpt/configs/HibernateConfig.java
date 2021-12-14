@@ -15,6 +15,8 @@ import org.springframework.core.env.Environment;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import static org.hibernate.cfg.Environment.*;
+import org.hibernate.cfg.beanvalidation.HibernateTraversableResolver;
+import org.springframework.orm.hibernate5.HibernateTransactionManager;
 /**
  *
  * @author ACER
@@ -51,5 +53,13 @@ public class HibernateConfig {
         props.setProperty(DIALECT,env.getProperty("hibernate.dialect"));
         
         return props;
+    }
+    
+    @Bean
+    public HibernateTransactionManager transactionManager(){
+        HibernateTransactionManager h = new HibernateTransactionManager();
+        h.setSessionFactory(getSessionFactory().getObject());
+        
+        return h;
     }
 }

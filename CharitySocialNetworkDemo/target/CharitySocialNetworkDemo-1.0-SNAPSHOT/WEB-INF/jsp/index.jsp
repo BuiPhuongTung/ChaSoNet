@@ -31,5 +31,13 @@
             <form:input path="lastName"/>
             <input type="submit" value="Send"/>
         </form:form>
+            <<ul>
+                <c:forEach var="u" items="${user}" >
+                <li>${u.id} - ${u.firstName} - ${u.lastName}</li>
+                
+                </c:forEach>>
+                
+            </ul>
+
     </body
 </html>
