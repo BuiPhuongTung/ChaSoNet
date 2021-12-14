@@ -19,7 +19,7 @@
         <h1>Hello ${name}</h1>    
         <a  href="<c:url value="/test"/> ">Redirect/forward</a>
         <div>
-            <img scr="<c:url value="./images/rose.png"/>" alt="test"/>
+            <img src="<c:url value="/images/default.jpg"/>"/>
         </div>
         <h2>${fullName}</h2>
         <c:url value="/hello-post" var="hello"/>
