@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import pojos.User;
+import com.bpt.pojos.User;
 
 
 @Controller
@@ -42,5 +42,11 @@ public class HomeController {
     public String helloPost(Model model,@ModelAttribute(value = "user") User user){
         model.addAttribute("fullName", user.getFirstName() + " " + user.getLastName());
         return "index";
+    }
+    @RequestMapping(path = "/test")
+    public String testRedirect(Model model){
+        model.addAttribute("testMsg", "Welcome to website!!!");
+        
+        return "redirect:/hello/Tung"; //forward
     }
 }
