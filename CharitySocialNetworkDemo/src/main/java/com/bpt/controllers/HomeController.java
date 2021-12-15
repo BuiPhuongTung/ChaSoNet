@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import com.bpt.pojos.User;
-import com.mysql.cj.Session;
 import javax.persistence.Query;
+import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.Transactional;
@@ -26,7 +26,7 @@ public class HomeController {
     @Autowired
     private LocalSessionFactoryBean sessionFactory;
     
-    @RequestMapping
+    @RequestMapping("/")
     @Transactional
     public String index(Model model){ 
 //            @RequestParam Map<String,String> params){
@@ -37,8 +37,8 @@ public class HomeController {
 //        else 
 //            model.addAttribute("name", "Tung");
 //        model.addAttribute("user", new User());
-        org.hibernate.Session s = sessionFactory.getObject().getCurrentSession();
-        Query q = s.createNamedQuery("From User");
+        Session s = sessionFactory.getObject().getCurrentSession();
+        Query q = s.createNamedQuery("FROM User");
         model.addAttribute("user", q.getResultList());
 //        s.close();
         return "index";
