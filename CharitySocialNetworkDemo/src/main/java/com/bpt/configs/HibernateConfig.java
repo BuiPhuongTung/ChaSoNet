@@ -48,10 +48,10 @@ public class HibernateConfig {
     }
     
     public Properties HibernateProperties(){
+        
         Properties props = new Properties();
         props.setProperty(SHOW_SQL, env.getProperty("hibernate.showSql"));
         props.setProperty(DIALECT,env.getProperty("hibernate.dialect"));
-        
         return props;
     }
     

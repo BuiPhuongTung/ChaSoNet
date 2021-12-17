@@ -28,7 +28,7 @@ import org.springframework.web.servlet.view.JstlView;
 @EnableTransactionManagement //Tự động dong/mo sessionFactory
 @ComponentScan(basePackages = {
     "com.bpt.controllers",
-    "com.bpt.repository",
+    "com.bpt.reponsitory",
     "com.bpt.service",
     "com.bpt.validator"}) // xac dinh controller nam o dau
 public class WebApplicationContextConfig implements WebMvcConfigurer{

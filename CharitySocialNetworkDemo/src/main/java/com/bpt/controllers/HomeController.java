@@ -14,21 +14,25 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import com.bpt.pojos.User;
+import com.bpt.service.UserService;
+import java.util.List;
 import javax.persistence.Query;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.Transactional;
 
-
 @Controller
 public class HomeController {
+
     @Autowired
     private LocalSessionFactoryBean sessionFactory;
+    @Autowired
+    private UserService userService;
     
     @RequestMapping("/")
     @Transactional
-    public String index(Model model){ 
+    public String index(Model model) {
 //            @RequestParam Map<String,String> params){
 //        String firstName = params.get("first_name")   ;
 //        String lastName = params.get("last_name");
@@ -37,29 +41,31 @@ public class HomeController {
 //        else 
 //            model.addAttribute("name", "Tung");
 //        model.addAttribute("user", new User());
-        Session s = sessionFactory.getObject().getCurrentSession();
-        Query q = s.createNamedQuery("FROM User");
-        model.addAttribute("user", q.getResultList());
+//        Session s = sessionFactory.getObject().getCurrentSession();
+//        Query q = s.createNamedQuery("From User");
+        model.addAttribute("users", this.userService.ds());
 //        s.close();
+
         return "index";
     }
-    
+
     @RequestMapping("/hello/{name}")
-    public String hello(Model model,@PathVariable(value = "name") String name){
+    public String hello(Model model, @PathVariable(value = "name") String name) {
         model.addAttribute("message", "Welcome " + name + " !!!");
-        
+
         return "hello";
     }
-    
-    @RequestMapping(path="/hello-post",method=RequestMethod.POST)
-    public String helloPost(Model model,@ModelAttribute(value = "user") User user){
+
+    @RequestMapping(path = "/hello-post", method = RequestMethod.POST)
+    public String helloPost(Model model, @ModelAttribute(value = "user") User user) {
         model.addAttribute("fullName", user.getFirstName() + " " + user.getLastName());
         return "index";
     }
+
     @RequestMapping(path = "/test")
-    public String testRedirect(Model model){
+    public String testRedirect(Model model) {
         model.addAttribute("testMsg", "Welcome to website!!!");
-        
+
         return "redirect:/hello/Tung"; //forward
     }
 }

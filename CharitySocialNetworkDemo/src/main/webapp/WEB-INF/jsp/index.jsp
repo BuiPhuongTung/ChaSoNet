@@ -18,8 +18,8 @@
     <body>
         
         <ul>
-            <c:forEach var="u" items="${user}" >
-            <li>${u.id}-${u.id}-${u.passWord}-${u.email}-${u.numberPhone}-${u.role}-${u.image}-${u.address}-${u.firstName}-${u.lastName}</li>
+            <c:forEach var="u" items="${users}" >
+            <li>${u.passWord}-${u.email}-${u.numberPhone}-${u.role}-${u.image}-${u.address}-${u.firstName}-${u.lastName}</li>
             </c:forEach>>
                 
         </ul>
