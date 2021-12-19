@@ -1,0 +1,6 @@
+com\bpt\controllers\HomeController.class
+com\bpt\pojos\User.class
+com\bpt\pojos\Comments.class
+com\bpt\configs\WebApplicationContextConfig.class
+com\bpt\configs\HibernateConfig.class
+com\bpt\configs\DispatcherServiceInitializer.class

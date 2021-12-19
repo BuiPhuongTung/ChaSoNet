@@ -15,6 +15,8 @@ import org.springframework.core.env.Environment;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import static org.hibernate.cfg.Environment.*;
+import org.springframework.orm.hibernate5.HibernateTransactionManager;
+
 /**
  *
  * @author ACER
@@ -22,21 +24,22 @@ import static org.hibernate.cfg.Environment.*;
 @Configuration
 @PropertySource("classpath:databases.properties")
 public class HibernateConfig {
+
     @Autowired
     private Environment env;
-    
+
     @Bean
-    public LocalSessionFactoryBean getSessionFactory(){
+    public LocalSessionFactoryBean getSessionFactory() {
         LocalSessionFactoryBean factory = new LocalSessionFactoryBean();
         factory.setPackagesToScan("com.bpt.pojos");
         factory.setDataSource(dataSource());
         factory.setHibernateProperties(HibernateProperties());
-        
+
         return factory;
     }
-    
+
     @Bean
-    public DataSource dataSource(){
+    public DataSource dataSource() {
         DriverManagerDataSource d = new DriverManagerDataSource();
         d.setDriverClassName(env.getProperty("hibernate.connection.driverClass"));
         d.setUrl(env.getProperty("hibernate.connection.url"));
@@ -44,12 +47,21 @@ public class HibernateConfig {
         d.setPassword(env.getProperty("hibernate.connection.password"));
         return d;
     }
-    
-    public Properties HibernateProperties(){
+
+    public Properties HibernateProperties() {
         Properties props = new Properties();
         props.setProperty(SHOW_SQL, env.getProperty("hibernate.showSql"));
-        props.setProperty(DIALECT,env.getProperty("hibernate.dialect"));
-        
+        props.setProperty(DIALECT, env.getProperty("hibernate.dialect"));
+
         return props;
+    }
+
+    @Bean
+    public HibernateTransactionManager transactionManager() {
+        HibernateTransactionManager h = new HibernateTransactionManager();
+
+        h.setSessionFactory(this.getSessionFactory().getObject());
+
+        return h;
     }
 }
