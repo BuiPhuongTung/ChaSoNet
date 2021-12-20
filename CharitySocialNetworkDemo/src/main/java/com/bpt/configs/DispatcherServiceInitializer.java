@@ -16,7 +16,8 @@ public class DispatcherServiceInitializer  extends AbstractAnnotationConfigDispa
     @Override
     protected Class<?>[] getRootConfigClasses() {
         return new Class[] {
-            HibernateConfig.class
+            HibernateConfig.class,
+            TilesConfig.class
         };
     }
 

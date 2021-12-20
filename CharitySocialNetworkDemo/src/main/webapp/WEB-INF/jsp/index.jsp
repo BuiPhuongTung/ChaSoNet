@@ -16,7 +16,7 @@
         <link href="<c:url value="/css/style.css"/>" rel="stylesheet" />
     </head>
     <body>
-       
+        <div class="container"> 
             <ul>
                 <c:forEach var="cmt" items="${comments}">
                     <li>
@@ -24,5 +24,7 @@
                     </li>
                 </c:forEach>
             </ul>
+        </div>
+
     </body
 </html>
