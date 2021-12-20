@@ -13,5 +13,6 @@ import java.util.List;
  * @author Hau Exoty
  */
 public interface UserReponsitory {
-    List<User> ds();
+    boolean addUser(User user);
+    List<User> getUsers(String userName);
 }

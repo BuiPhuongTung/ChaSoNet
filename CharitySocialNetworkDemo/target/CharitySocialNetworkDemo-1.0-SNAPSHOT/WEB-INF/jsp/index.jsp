@@ -16,13 +16,14 @@
         <link href="<c:url value="/css/style.css"/>" rel="stylesheet" />
     </head>
     <body>
-        
-        <ul>
-            <c:forEach var="u" items="${users}" >
-            <li>${u.passWord}-${u.email}-${u.numberPhone}-${u.role}-${u.image}-${u.address}-${u.firstName}-${u.lastName}</li>
-            </c:forEach>>
-                
-        </ul>
-
+        <div class="container"> 
+            <ul>
+                <c:forEach var="cmt" items="${comments}">
+                    <li>
+                        ${cmt.content}
+                    </li>
+                </c:forEach>
+            </ul>
+        </div>
     </body
 </html>

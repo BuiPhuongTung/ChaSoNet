@@ -7,11 +7,13 @@ package com.bpt.service;
 
 import com.bpt.pojos.User;
 import java.util.List;
+import org.springframework.security.core.userdetails.UserDetailsService;
 
 /**
  *
  * @author Hau Exoty
  */
-public interface UserService {
-    List<User> ds();
+public interface UserService  extends UserDetailsService{
+    boolean addUser(User user);
+    List<User> getUsers(String userName);
 }
