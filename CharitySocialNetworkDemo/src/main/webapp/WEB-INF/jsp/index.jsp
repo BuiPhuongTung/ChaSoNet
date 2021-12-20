@@ -16,6 +16,7 @@
         <link href="<c:url value="/css/style.css"/>" rel="stylesheet" />
     </head>
     <body>
+<<<<<<< HEAD
         
         <ul>
             <c:forEach var="u" items="${users}" >
@@ -23,6 +24,17 @@
             </c:forEach>>
                 
         </ul>
+=======
+        <div class="container"> 
+            <ul>
+                <c:forEach var="cmt" items="${comments}">
+                    <li>
+                        ${cmt.content}
+                    </li>
+                </c:forEach>
+            </ul>
+        </div>
+>>>>>>> 5c94eeab34c013143e389724a13a23c8cf297888
 
     </body
 </html>

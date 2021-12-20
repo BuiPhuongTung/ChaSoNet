@@ -14,8 +14,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import com.bpt.pojos.User;
+<<<<<<< HEAD
 import com.bpt.service.UserService;
 import java.util.List;
+=======
+>>>>>>> 5c94eeab34c013143e389724a13a23c8cf297888
 import javax.persistence.Query;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +30,7 @@ public class HomeController {
 
     @Autowired
     private LocalSessionFactoryBean sessionFactory;
+<<<<<<< HEAD
     @Autowired
     private UserService userService;
     
@@ -45,6 +49,16 @@ public class HomeController {
 //        Query q = s.createNamedQuery("From User");
         model.addAttribute("users", this.userService.ds());
 //        s.close();
+=======
+
+    @RequestMapping("/")
+    @Transactional
+    public String index(Model model) {
+        Session s = sessionFactory.getObject().getCurrentSession();
+        Query q = s.createQuery("From Comments");
+
+        model.addAttribute("comments", q.getResultList());
+>>>>>>> 5c94eeab34c013143e389724a13a23c8cf297888
 
         return "index";
     }
@@ -59,6 +73,10 @@ public class HomeController {
     @RequestMapping(path = "/hello-post", method = RequestMethod.POST)
     public String helloPost(Model model, @ModelAttribute(value = "user") User user) {
         model.addAttribute("fullName", user.getFirstName() + " " + user.getLastName());
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5c94eeab34c013143e389724a13a23c8cf297888
         return "index";
     }
 
