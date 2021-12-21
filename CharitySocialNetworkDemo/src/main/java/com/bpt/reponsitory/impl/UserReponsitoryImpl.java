@@ -36,7 +36,7 @@ public class UserReponsitoryImpl implements UserReponsitory{
         Session session = this.sessionFactory.getObject().getCurrentSession();
         try {
             session.save(user);
-            
+            System.out.println(user.getFirstName() + " " + user.getLastName() + " "+ user.getPassWord() + " " + user.getConfirmPassword() + " " + user.getId());
             return true;
         } catch (HibernateException ex) {
             System.err.println(ex.getMessage());

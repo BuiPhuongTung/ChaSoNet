@@ -20,27 +20,28 @@ import javax.persistence.Transient;
  */
 @Entity
 @Table(name = "user")
-
 public class User implements Serializable{
+
+    
     public static String ADMIN = "ADMIN";
     public static String USER = "USER";
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    
-    private String firstName;
-    
-    private String lastName;
+    private String userName;
+    private String passWord;
     private String email;
     private String numberPhone;
-    
-    private String role;
+    private String roles;
+    private String image;
     private String address;
-    private String passWord;
-    private String userName;
-    private boolean active;
+    private String firstName;
+    private String lastName;
+    
+//    private boolean active;
     @Transient
     private String confirmPassword;
+
     /**
      * @return the id
      */
@@ -53,6 +54,20 @@ public class User implements Serializable{
      */
     public void setId(int id) {
         this.id = id;
+    }
+
+    /**
+     * @return the passWord
+     */
+    public String getPassWord() {
+        return passWord;
+    }
+
+    /**
+     * @param passWord the passWord to set
+     */
+    public void setPassWord(String passWord) {
+        this.passWord = passWord;
     }
 
     /**
@@ -84,17 +99,31 @@ public class User implements Serializable{
     }
 
     /**
-     * @return the role
+     * @return the roles
      */
-    public String getRole() {
-        return role;
+    public String getRoles() {
+        return roles;
     }
 
     /**
-     * @param role the role to set
+     * @param roles the roles to set
      */
-    public void setRole(String role) {
-        this.role = role;
+    public void setRoles(String roles) {
+        this.roles = roles;
+    }
+
+    /**
+     * @return the image
+     */
+    public String getImage() {
+        return image;
+    }
+
+    /**
+     * @param image the image to set
+     */
+    public void setImage(String image) {
+        this.image = image;
     }
 
     /**
@@ -110,8 +139,6 @@ public class User implements Serializable{
     public void setAddress(String address) {
         this.address = address;
     }
-
-    
 
     /**
      * @return the firstName
@@ -155,35 +182,6 @@ public class User implements Serializable{
         this.userName = userName;
     }
 
-
-    /**
-     * @return the active
-     */
-    public boolean isActive() {
-        return active;
-    }
-
-    /**
-     * @param active the active to set
-     */
-    public void setActive(boolean active) {
-        this.active = active;
-    }
-
-    /**
-     * @return the passWord
-     */
-    public String getPassWord() {
-        return passWord;
-    }
-
-    /**
-     * @param passWord the passWord to set
-     */
-    public void setPassWord(String passWord) {
-        this.passWord = passWord;
-    }
-
     /**
      * @return the confirmPassword
      */
@@ -197,6 +195,7 @@ public class User implements Serializable{
     public void setConfirmPassword(String confirmPassword) {
         this.confirmPassword = confirmPassword;
     }
+    
 
     
 }

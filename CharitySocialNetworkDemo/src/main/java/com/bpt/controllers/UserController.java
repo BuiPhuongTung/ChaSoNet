@@ -40,6 +40,7 @@ public class UserController {
     @PostMapping("/register")
     public String register(Model model, @ModelAttribute(value = "user") User user){
         String errMsg = "";
+        
         if(user.getPassWord().equals(user.getConfirmPassword())){
             if(this.userDetailsService.addUser(user) == true)
                 return "redirect:/login";

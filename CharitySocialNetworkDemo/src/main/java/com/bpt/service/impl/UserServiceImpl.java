@@ -36,7 +36,7 @@ public class UserServiceImpl implements UserService{
     public boolean addUser(User user) {
         String pass = user.getPassWord();
         user.setPassWord(this.passwordEncoder.encode(pass));
-        user.setRole(User.USER);
+        user.setRoles(User.USER);
         return this.userReponsitory.addUser(user);
     }
 
@@ -53,7 +53,7 @@ public class UserServiceImpl implements UserService{
         User user = users.get(0);
         
         Set<GrantedAuthority> auth = new HashSet<>();
-        auth.add(new SimpleGrantedAuthority(user.getRole()));
+        auth.add(new SimpleGrantedAuthority(user.getRoles()));
         
         return new org.springframework.security.core.userdetails.User(user.getUserName(), user.getPassWord(), auth);
     }
