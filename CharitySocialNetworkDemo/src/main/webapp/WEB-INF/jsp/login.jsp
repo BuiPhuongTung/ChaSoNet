@@ -20,11 +20,11 @@
 <form method="post" action = ${action}>
     <div class = "form-group">
         <label for="userName">UserName</label>
-        <input type="text" id ="userName" name =" userName" class ="form-control" /> 
+        <input type="text" id ="userName" name ="userName" class ="form-control" /> 
     </div>  
     <div class = "form-group">
         <label for="passWord">PassWord</label>
-        <input type="text" id ="passWord" name =" passWord" class ="form-control" /> 
+        <input type="password" id ="passWord" name ="passWord" class ="form-control" /> 
     </div> 
     <div class = "form-group">
         <input type ="submit" value="Login" class="btn btn-danger"/>

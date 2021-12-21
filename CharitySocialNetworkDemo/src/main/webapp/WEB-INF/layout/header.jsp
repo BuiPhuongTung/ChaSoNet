@@ -21,10 +21,16 @@
     <li class="nav-item active">
         <a class="nav-link text-danger" href="<c:url value="/login" /> ">Login</a>
     </li>
+    <li class="nav-item active">
+        <a class="nav-link text-danger" href="<c:url value="/register" /> ">Sign up</a>
+    </li>
     </c:if>
     <c:if test = "${pageContext.request.userPrincipal.name != null}">
         <li class="nav-item active">
         <a class="nav-link text-danger" href="<c:url value="/" /> ">${pageContext.request.userPrincipal.name}</a>
+        </li>
+        <li class="nav-item active">
+        <a class="nav-link text-danger" href="<c:url value="/logout" /> ">Logout</a>
         </li>
         
     </c:if>

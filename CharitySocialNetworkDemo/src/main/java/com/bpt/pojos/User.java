@@ -12,6 +12,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 /**
  *
@@ -21,8 +22,8 @@ import javax.persistence.Table;
 @Table(name = "user")
 
 public class User implements Serializable{
-    private static String ADMIN = "ADMIN";
-    private static String USER = "USER";
+    public static String ADMIN = "ADMIN";
+    public static String USER = "USER";
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -34,11 +35,12 @@ public class User implements Serializable{
     private String numberPhone;
     
     private String role;
-    private String image;
     private String address;
     private String passWord;
     private String userName;
     private boolean active;
+    @Transient
+    private String confirmPassword;
     /**
      * @return the id
      */
@@ -93,20 +95,6 @@ public class User implements Serializable{
      */
     public void setRole(String role) {
         this.role = role;
-    }
-
-    /**
-     * @return the image
-     */
-    public String getImage() {
-        return image;
-    }
-
-    /**
-     * @param image the image to set
-     */
-    public void setImage(String image) {
-        this.image = image;
     }
 
     /**
@@ -167,33 +155,6 @@ public class User implements Serializable{
         this.userName = userName;
     }
 
-    /**
-     * @return the ADMIN
-     */
-    public static String getADMIN() {
-        return ADMIN;
-    }
-
-    /**
-     * @param aADMIN the ADMIN to set
-     */
-    public static void setADMIN(String aADMIN) {
-        ADMIN = aADMIN;
-    }
-
-    /**
-     * @return the USER
-     */
-    public static String getUSER() {
-        return USER;
-    }
-
-    /**
-     * @param aUSER the USER to set
-     */
-    public static void setUSER(String aUSER) {
-        USER = aUSER;
-    }
 
     /**
      * @return the active
@@ -222,6 +183,22 @@ public class User implements Serializable{
     public void setPassWord(String passWord) {
         this.passWord = passWord;
     }
+
+    /**
+     * @return the confirmPassword
+     */
+    public String getConfirmPassword() {
+        return confirmPassword;
+    }
+
+    /**
+     * @param confirmPassword the confirmPassword to set
+     */
+    public void setConfirmPassword(String confirmPassword) {
+        this.confirmPassword = confirmPassword;
+    }
+
+    
 }
 
     

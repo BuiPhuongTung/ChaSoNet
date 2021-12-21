@@ -26,4 +26,9 @@ Software Foundation//DTD Tiles Configuration 3.0//EN"
         <put-attribute name="css" value="..."></put-attribute>
         <put-attribute name="content" value="/WEB-INF/jsp/login.jsp"></put-attribute>
     </definition>
+    <definition name="register" extends="baseLayout">
+        <put-attribute name="title" value="Sign up"></put-attribute>
+        <put-attribute name="css" value="..."></put-attribute>
+        <put-attribute name="content" value="/WEB-INF/jsp/register.jsp"></put-attribute>
+    </definition>
 </tiles-definitions>
