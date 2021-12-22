@@ -73,16 +73,17 @@ DROP TABLE IF EXISTS `user`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `user` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `password` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
+  `userName` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
+  `passWord` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
-  `numberPhone` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
-  `role` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
-  `image` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `address` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `numberPhone` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `roles` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
+  `image` varchar(150) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `address` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `firstName` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `lastName` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -91,7 +92,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'tung','buiphuongtung.dev@gmail.com','0865657251','admin','tung.png','256 DQH, GV, TPHCM','Phuong','Tung');
+INSERT INTO `user` VALUES (2,'1','$2a$10$65gsByqWVmd2PhqUONkZ1Ov6.MTbvGwT22XkQK.o2ZhSNsCBT14H.','1851010012bao@ou.edu.vn',NULL,'USER',NULL,NULL,'1','1'),(3,'a','$2a$10$x5AE5hcW1b9iP1HyzI0Jw.59omRGuxdmtgzdKRhS5PwEHbSEhPEny','1851010151tung@ou.edu.vn',NULL,'USER',NULL,NULL,'1','2'),(4,'bpt','$2a$10$bVr6.Qy2U3tmR61Bm5d9XOvsJwtIt1A0OYvC/MVbmWQMAxF2zfDeO','thienphongtruong@gmail.com',NULL,'USER',NULL,NULL,'TÃ¹ng','Ngu');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -104,4 +105,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-12-19  9:44:30
+-- Dump completed on 2021-12-21 22:14:26
