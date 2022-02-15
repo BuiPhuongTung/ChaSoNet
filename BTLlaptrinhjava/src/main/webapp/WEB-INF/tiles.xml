@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache
+Software Foundation//DTD Tiles Configuration 3.0//EN"
+"http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+    <definition name="baseLayout" template="/WEB-INF/layout/base.jsp">
+        <put-attribute name="title" value="Phong Phong" />
+        <put-attribute name="header" value="/WEB-INF/layout/header.jsp" />
+        <put-attribute name="footer" value="/WEB-INF/layout/footer.jsp" />
+        
+        <put-attribute name="content" value="base" />
+        
+        <put-list-attribute name="stylesheets"></put-list-attribute>
+        <put-list-attribute name="javascripts"></put-list-attribute>
+    </definition>
+    
+    <definition name="index" extends="baseLayout">
+        <put-attribute name="title" value="Phong - Social Network" />
+        <put-attribute name="content" value="/WEB-INF/jsp/index.jsp" />
+        
+        <put-list-attribute name="stylesheets">
+            <add-attribute value="/css/style.css" />
+        </put-list-attribute>
+        <put-list-attribute name="javascripts">
+            <add-attribute value="/js/main.js" />
+            <add-attribute value="/js/notification.js" />
+        </put-list-attribute>
+    </definition>
+    
+     <definition name="category" extends="baseLayout">
+        <put-attribute name="title" value="Phong - Social Network - Loại sản phẩm" />
+        <put-attribute name="content" value="/WEB-INF/jsp/category.jsp" />
+        
+        <put-list-attribute name="stylesheets">
+            <add-attribute value="/css/category.css" />
+        </put-list-attribute>
+        <put-list-attribute name="javascripts">
+            <add-attribute value="/js/main.js" />
+        </put-list-attribute>
+    </definition>
+    
+    <definition name="auctionDetail" extends="baseLayout">
+        <put-attribute name="title" value="Phong - Social Network - Chi tiết" />
+        <put-attribute name="content" value="/WEB-INF/jsp/itemdetail.jsp" />
+        
+        <put-list-attribute name="stylesheets">
+            <add-attribute value="/css/itemdetail.css" />
+            <add-attribute value="/css/blue.css" />
+        </put-list-attribute>
+        <put-list-attribute name="javascripts">
+            <add-attribute value="/js/main.js" />
+            <add-attribute value="/js/notification.js" />
+        </put-list-attribute>
+    </definition>
+    
+    <definition name="user" extends="baseLayout">
+        <put-attribute name="title" value="Phong - Social Network - Thông tin người dùng" />
+        <put-attribute name="content" value="/WEB-INF/jsp/user.jsp" />
+        
+        <put-list-attribute name="stylesheets">
+            <add-attribute value="/css/user.css" />
+        </put-list-attribute>
+        <put-list-attribute name="javascripts">
+            <add-attribute value="/js/notification.js" />
+            <add-attribute value="/js/main.js" />
+        </put-list-attribute>
+    </definition>
+    
+    <definition name="auctionJoin" extends="baseLayout">
+        <put-attribute name="title" value="Phong - Social Network - Các đấu giá đang tham gia" />
+        <put-attribute name="content" value="/WEB-INF/jsp/favorites.jsp" />
+        
+        <put-list-attribute name="stylesheets">
+            <add-attribute value="/css/favorites.css" />
+        </put-list-attribute>
+        <put-list-attribute name="javascripts">
+            <add-attribute value="/js/main.js" />
+        </put-list-attribute>
+    </definition>
+</tiles-definitions>
