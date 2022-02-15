@@ -27,7 +27,7 @@ import javax.persistence.Table;
  * @author kan_haungo
  */
 @Entity
-@Table(name = "social_network_postimage")
+@Table(name = "post_image")
 public class FeedImage implements Serializable{
 
     @Id

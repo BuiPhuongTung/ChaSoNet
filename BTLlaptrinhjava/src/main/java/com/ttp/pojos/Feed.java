@@ -17,7 +17,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.web.multipart.MultipartFile;
 
 @Entity
-@Table(name = "social_network_post")
+@Table(name = "post")
 public class Feed implements Serializable {
 
     @Id
@@ -52,7 +52,7 @@ public class Feed implements Serializable {
     @JsonIgnore
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
-            name = "social_network_post_like",
+            name = "post_like",
             joinColumns = {
                 @JoinColumn(name = "post_id")
             },
@@ -65,7 +65,7 @@ public class Feed implements Serializable {
     @JsonIgnore
     @ManyToMany(cascade = CascadeType.ALL, targetEntity = Hashtag.class)
     @JoinTable(
-            name = "social_network_post_hashtag",
+            name = "post_hashtag",
             joinColumns = {
                 @JoinColumn(name = "post_id")
             },

@@ -15,7 +15,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 @Entity
-@Table(name = "social_network_auctioncomment")
+@Table(name = "auctioncomment")
 public class AuctionComment implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

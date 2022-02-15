@@ -19,7 +19,7 @@ import javax.validation.constraints.NotNull;
 import org.springframework.web.multipart.MultipartFile;
 
 @Entity
-@Table(name = "social_network_auction")
+@Table(name = "auction")
 public class Auction implements Serializable {
 
     @Id

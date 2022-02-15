@@ -24,7 +24,7 @@ import javax.persistence.Table;
  * @author kan_haungo
  */
 @Entity
-@Table(name = "social_network_hashtagpost")
+@Table(name = "hashtagpost")
 public class Hashtag implements Serializable {
 
     @Id

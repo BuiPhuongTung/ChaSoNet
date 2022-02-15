@@ -21,7 +21,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "social_network_auctionimage")
+@Table(name = "auctionimage")
 public class AuctionImage implements Serializable{
 
     @Id

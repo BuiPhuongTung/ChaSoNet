@@ -17,7 +17,7 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name = "social_network_paymentmethod")
+@Table(name = "paymentmethod")
 public class Payment implements Serializable{
 
     @Id

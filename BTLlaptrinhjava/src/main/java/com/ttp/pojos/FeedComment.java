@@ -20,7 +20,7 @@ import javax.persistence.*;
  * @author kan_haungo
  */
 @Entity
-@Table(name = "social_network_postcomment")
+@Table(name = "post_comment")
 public class FeedComment implements Serializable{
 
     @Id

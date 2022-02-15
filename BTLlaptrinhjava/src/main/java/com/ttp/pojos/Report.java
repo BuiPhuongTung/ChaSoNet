@@ -14,7 +14,7 @@ import java.util.Date;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "social_network_report")
+@Table(name = "report")
 public class Report implements Serializable {
 
     @Id

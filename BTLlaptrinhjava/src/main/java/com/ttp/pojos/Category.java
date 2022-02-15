@@ -21,7 +21,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "social_network_categoryauction")
+@Table(name = "categoryauction")
 public class Category implements Serializable{
 
     @Id

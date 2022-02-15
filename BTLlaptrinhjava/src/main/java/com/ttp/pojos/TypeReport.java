@@ -13,7 +13,7 @@ import java.io.Serializable;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "social_network_typereport")
+@Table(name = "typereport")
 public class TypeReport implements Serializable {
 
     @Id
